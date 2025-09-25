@@ -1,0 +1,8 @@
+file_format: "1"
+id: litl
+name: Litl
+type: shield
+url: https://sthlmkb.com/shop/litl-keyboard-kit/
+requires: [pro_micro]
+features:
+  - keys

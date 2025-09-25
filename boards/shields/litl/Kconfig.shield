@@ -1,0 +1,3 @@
+# Minimal shield Kconfig
+config SHIELD_LITL
+    bool "Litl"

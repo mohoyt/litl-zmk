@@ -1,0 +1,4 @@
+if SHIELD_LITL
+config ZMK_KEYBOARD_NAME
+    default "Litl"
+endif
