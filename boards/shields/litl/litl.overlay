@@ -6,7 +6,7 @@
         zmk,matrix-transform = &default_transform;
     };
 
-    // Map scan row/col -> key positions (row-major)
+    /* Map scan row/col -> key positions (row-major) */
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <6>;
