@@ -1,6 +1,7 @@
 {
     "editor.formatOnSave": false,
     "files.associations": {
-        "*.keymap": "c"
+        "*.keymap": "c",
+        "*.overlay": "cpp"
     }
 }

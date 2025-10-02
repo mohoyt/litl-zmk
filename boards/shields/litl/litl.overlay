@@ -46,29 +46,29 @@
         ,  <&pro_micro 21 GPIO_ACTIVE_HIGH>
         ;
     };
+
+
+    /* === (Optional) EC11 rotary encoder(s) ===
+    * Copy ENCODERS_PAD_A/B from QMK if you use encoders.
+    * You can add multiple encoder nodes and list them in &sensors.
+    * Encoders in ZMK are "sensors" (rotation) + a separate key for the push switch.
+    * Docs: hardware & feature pages: https://zmk.dev/docs/development/hardware-integration/encoders
+    */
+
+    encoder_right: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <20>;  // matches your detents
+        status = "okay";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_right>;         // list all encoders here
+        triggers-per-rotation = <20>;   // set to your detents (common: 18, 20, 24)
+    };
 };
-
-/* === (Optional) EC11 rotary encoder(s) ===
- * Copy ENCODERS_PAD_A/B from QMK if you use encoders.
- * You can add multiple encoder nodes and list them in &sensors.
- * Encoders in ZMK are "sensors" (rotation) + a separate key for the push switch.
- * Docs: hardware & feature pages: https://zmk.dev/docs/development/hardware-integration/encoders
- */
-
-encoder_right: right_encoder {
-    compatible = "alps,ec11";
-    a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    steps = <20>;  // matches your detents
-    status = "okay";
-};
-
-&sensors {
-    compatible = "zmk,keymap-sensors";
-    sensors = <&encoder_right>;         // list all encoders here
-    triggers-per-rotation = <20>;   // set to your detents (common: 18, 20, 24)
-};
-
 
 
 /* === (Optional) OLED / Nice!View ===
