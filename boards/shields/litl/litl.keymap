@@ -8,6 +8,7 @@
 
         default_layer {
             display-name = "Default Layer";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 /* ----------------------------------------------------------------------------
  | ESC  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  | BSPC  |
  | TAB  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  ENT  |
@@ -24,11 +25,12 @@
 
         fn_layer {
             display-name = "Fn Layer";
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
             bindings = <
-    &kp ESC   &kp N1       &kp N2         &kp N3       &kp N4       &kp N5       &kp N6  &kp N7   &kp N8    &kp N9    &kp N0    &kp BSPC
-    &trans    &bt BT_CLR   &studio_unlock &trans       &trans       &trans       &kp UP  &kp UP   &kp MINUS &kp EQUAL &kp APOS  &trans     
-    &trans    &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans  &kp LEFT &kp DOWN  &kp RIGHT &kp EQUAL &kp FSLH  
-    &trans    &trans       &trans                      &trans       &trans       &trans  &trans   &trans    &trans    &trans    &trans  
+    &kp ESC   &kp N1       &kp N2         &kp N3       &kp N4       &kp N5       &kp N6  &kp N7   &kp N8    &kp N9    &kp N0     &kp BSPC
+    &trans    &bt BT_CLR   &studio_unlock &trans       &trans       &trans       &kp UP  &kp UP   &kp MINUS &kp EQUAL &kp APOS   &trans     
+    &trans    &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans  &kp LEFT &kp DOWN  &kp RIGHT &kp EQUAL  &kp FSLH  
+    &trans    &trans       &trans                      &trans       &trans       &trans  &trans   &trans    &trans    &kp C_MUTE &kp C_PP  
             >;
         };
 

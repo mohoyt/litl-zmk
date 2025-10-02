@@ -54,23 +54,22 @@
  * Encoders in ZMK are "sensors" (rotation) + a separate key for the push switch.
  * Docs: hardware & feature pages: https://zmk.dev/docs/development/hardware-integration/encoders
  */
-// Example with a single encoder (replace pins):
-/*
+
+
 &sensors {
     compatible = "zmk,keymap-sensors";
-    sensors = <&ec11_left>;         // list all encoders here
+    sensors = <&encoder_right>;         // list all encoders here
     triggers-per-rotation = <24>;   // set to your detents (common: 18, 20, 24)
 };
 
-ec11_left: ec11_left {
+encoder_right: encoder_right {
     compatible = "alps,ec11";
-    // TODO: pins from your QMK ENCODERS_PAD_A/B (Pro Micro names)
-    a-gpios = <&pro_micro D4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro D5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    a-gpios = <&pro_micro D2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro D3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     steps = <24>;  // matches your detents
     status = "okay";
 };
-*/
+
 
 /* === (Optional) OLED / Nice!View ===
  * Litl has an OLED footprint; ZMK supports SSD1306 and nice!view.
