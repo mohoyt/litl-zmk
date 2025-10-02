@@ -55,18 +55,18 @@
  * Docs: hardware & feature pages: https://zmk.dev/docs/development/hardware-integration/encoders
  */
 
-encoder_right: encoder_right {
+encoder_right: right_encoder {
     compatible = "alps,ec11";
     a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    steps = <24>;  // matches your detents
+    steps = <20>;  // matches your detents
     status = "okay";
 };
 
 &sensors {
     compatible = "zmk,keymap-sensors";
     sensors = <&encoder_right>;         // list all encoders here
-    triggers-per-rotation = <24>;   // set to your detents (common: 18, 20, 24)
+    triggers-per-rotation = <20>;   // set to your detents (common: 18, 20, 24)
 };
 
 
